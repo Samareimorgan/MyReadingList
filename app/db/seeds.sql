@@ -1,0 +1,3 @@
+INSERT INTO books (book_title, book_author,book_info, complete) VALUES ("Harry Potter & the Half Blood Prince", "Jk Rowling", "https://www.goodreads.com/book/show/1.Harry_Potter_and_the_Half_Blood_Prince", false);
+INSERT INTO books (book_title, book_author,book_info, complete) VALUES ("Romancing The Stone", "Catherine Lanigan", "https://www.goodreads.com/book/show/1771717.Romancing_the_Stone", false);
+INSERT INTO books (book_title, book_author,book_info, complete) VALUES ("Tesla: Inventor of the Electrical Age", "Carlson W. Bernard", "https://www.goodreads.com/book/show/17130499-tesla", false);
