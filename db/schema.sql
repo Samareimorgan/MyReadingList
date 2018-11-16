@@ -6,9 +6,10 @@ CREATE TABLE books
 (
     id INT (6) AUTO_INCREMENT,
     book_title VARCHAR (200) NOT NULL,
-    book_author VARCHAR(150),
-    book_info VARCHAR(200),
-    complete BOOLEAN DEFAULT false,
+    complete BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (id)
 
 );
+
+USE readinglist_db;
+SELECT * FROM books;

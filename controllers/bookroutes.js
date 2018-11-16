@@ -3,11 +3,12 @@ var express = require("express");
 var router = express.Router();
 
 //Import model to utilize the database functions
-var book = require("../models/books");
+var books = require("../models/books");
+
 
 //create  routes
 router.get("/", function(req, res) {
-    book.all(function(data) {
+    books.all(function(data) {
       var hbsObject = {
         books: data
       };
@@ -16,15 +17,13 @@ router.get("/", function(req, res) {
     });
   });
 
-  router.post("/api/cats", function(req, res) {
-    book.create([
-      "Title", "Read"
-        ], [
-        req.body.title, req.body.complete
-        ], function(result) {
-
+  router.post("/api/books", function(req, res) {
+    console.log(res);
+    console.log(req);
+    books.create([ "Title", "Read"], [req.body.book_title, req.body.complete], function(result) {
+          console.log(result);
       // Send back the ID of the new title
-      res.json({ id: result.id });
+      res.json({ id: result.insertId });
     });
   });
   
@@ -32,11 +31,13 @@ router.get("/", function(req, res) {
     var condition = "id = " + req.params.id;
   
     console.log("condition", condition);
+    
   
-    book.update({
-      complete: req.body.complete
+    books.update({
+      complete: 1
     }, condition, function(result) {
-      if (result.changedRows == 0) {
+      console.log(result);
+      if (result.affectedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
@@ -48,7 +49,7 @@ router.get("/", function(req, res) {
   router.delete("/api/books/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
-    book.delete(condition, function(result) {
+    books.delete(condition, function(result) {
       if (result.affectedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();

@@ -1,0 +1,50 @@
+body {
+    background-color: tan;
+}
+
+header {
+   
+    background-image: url("../images/books_header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+
+}
+
+h1 {
+    color:peru;
+    font-size: 55px; 
+    text-align: center;
+    padding: 20px;
+    font-family:'Spicy Rice', cursive;
+    
+   
+}
+h2 {
+    padding: 15px; 
+    color: maroon;
+    font-family:'Spicy Rice', cursive;
+}
+
+.readBook {
+    font-size: 16px; 
+    background-color: maroon;
+    border: 2px solid black;
+}
+
+.deleteBook {
+        font-size: 16px; 
+        background-color: maroon;
+        border: 2px solid black;
+}
+
+.bookList {
+    font-size: 18px; 
+}
+
+
+#bookForm {
+    padding: 25px; 
+}
+

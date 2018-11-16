@@ -1,0 +1,43 @@
+
+
+<div class= "container-fluid">
+    <div class = "row">
+        <div class = "col-md text-center">
+            <h2>To Read</h2>
+            <ul>
+            {{#each books}}
+                {{#unless complete}}
+                    <span class="bookList"><strong> {{this.id}} - {{this.book_title}} </strong></span>
+                    <button type="button" class="readBook btn-md btn-primary" data-id="{{this.id}}" data-newComplete="{{complete}}">READ IT!</button>
+                    <hr>
+                {{/unless}}
+
+            {{/each}}
+            
+            </ul>
+        </div>
+        <div class = "col-md">
+            <form id = "bookForm">
+                <div class="input-group mb-3">
+                    <input type="text" id="#newBookTitle"class="form-control" placeholder="Charlotte's Web" aria-label="Book Title" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="addBook">Add Book</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class = "col-md text-center">
+            <h2>Read</h2>
+            <ul>
+            {{#each books}}
+                {{#if complete}}
+                    <span class="bookList"><strong> {{this.id}} - {{this.book_title}} </strong></span>
+                    <button type="button" class="deleteBook btn-md btn-primary" data-id="{{this.id}}" data-newComplete="{{complete}}">
+                        DELETE IT!</button>
+                {{/if}}
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+

@@ -80,7 +80,7 @@ function printQuestionMarks(num) {
         if (err) {
           throw err;
         }
-  
+      
         cb(result);
       });
     },

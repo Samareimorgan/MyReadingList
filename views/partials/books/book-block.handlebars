@@ -1,0 +1,9 @@
+<li>
+	{{name}}
+
+	<button class="change-complete" data-id="{{id}}" data-newcomplete="{{complete}}">
+		{{#if complete}}I've Read This! {{else}}Let's Read This!{{/if}}
+	</button>
+
+	<button class="delete-book" data-id="{{this.id}}">DELETE!</button>
+</li>
