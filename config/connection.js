@@ -1,12 +1,16 @@
 //Dependencies
 var mysql = require('mysql2');
+var connection;
+if(Process.env.JAWSDB_URL) {
 
 //Connection Information to mysql
-var connection = mysql.createConnection({
-  host     : 'g9fej9rujq0yt0cd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else
+connection = mysql.createConnection({
+  host     : 'localhost',
   port     : 3306,
-  user     : 'xdsejclbiov3ozdu',
-  password : 'pbcl4m439a0m60vd',
+  user     : 'root',
+  password : 'password',
   database : 'readinglist_db'
 });
  
