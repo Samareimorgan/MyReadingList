@@ -1,4 +1,25 @@
-$(document).ready(function () {
+$(function() {
+  
+  $(".readBook").on("click",function(event){
+    var id = $(this).data("id");
+    var newComplete = $(this).data("newcomplete");
+
+    var newBookComplete = {
+      complete: newComplete
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/books/" + id, {
+      type: "PUT",
+      data: newBookComplete
+    }).then(
+      function () {
+        console.log("changed result to", newComplete);
+        // Reload the page 
+        location.reload();
+      }
+    );
+  });
 
   // Add a new book 
   $("#addBook").on("click", function (e) {
@@ -6,53 +27,30 @@ $(document).ready(function () {
     e.preventDefault();
 
     var newBook = {
-      book_title: $("#newBookTitle").val(),
+      book_title: $("#newBookTitle").val().trim(),
       complete: 0
     };
-
-
-    var currentURL = window.location.origin;
 
     // $.post(currentURL +"/api/books", newBook, function(data){
     //     console.log(data);
     //     });
 
     //Send the POST request.
-    $.ajax(currentURL + "/api/books", {
+    $.ajax("/api/books", {
       type: "POST",
       data: newBook
     }).then(
       function () {
         console.log("created new book");
         // Reload the page 
-        location.reload();
+       location.reload();
       }
     );
   });
 
-$(".readBook").on("click",function(){
-  var id = $(this).data("id");
-   var newComplete = $(this).data("newcomplete");
-
-  var newBookComplete = {
-  complete: newComplete
-  };
-
-  // Send the PUT request.
-  $.ajax("/api/books/" + id, {
-    type: "PUT"
-    //data: newBookComplete
-  }).then(
-    function (result) {
-      console.log("changed result to", result);
-      // Reload the page 
-      location.reload();
-    }
-  );
-})
 
 
-  $(".deleteBook").on("click", function () {
+  $(".deleteBook").on("click", function (event) {
     var id = $(this).data("id");
 
     // Send the DELETE request.
