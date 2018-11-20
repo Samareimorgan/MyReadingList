@@ -5,15 +5,16 @@
 My Reading List aka The Reading Rover is a simple mysql and node based application. The premise is an app that allows the user to enter text (in this instance a book title) and that text goes to the left side of the page.  These are books that are yet to be read.  Once the user has read the book, they press the "READ IT" button next to the book and it moves to the right hand side of the page.  This allows the user to note how many books they have read.   If at any time the user would like to delete the book, they can once the book is on the right hand side of the page by pressing the delete button. 
 
 ###Intital Look without Database information
-![alt text](https:// photo here.jpg "written detail") 
+![alt text](https://raw.githubusercontent.com/Samareimorgan/MyReadingList/master/public/assets/images/addabook.JPG"Search Bar Photo") 
 
 ### Image of Web App after entering a few books
-![alt text](https:// photo here.jpg "written detail") 
+![alt text](https://raw.githubusercontent.com/Samareimorgan/MyReadingList/master/public/assets/images/booksadded.JPG"Book titles added to left side") 
 
 ### Image of Web App after reading a few books
+![alt text](https://raw.githubusercontent.com/Samareimorgan/MyReadingList/master/public/assets/images/readabook.JPG"Book titles added to right side after completed") 
 
 ### Image of Web App after deleting a book
-
+![alt text](https://raw.githubusercontent.com/Samareimorgan/MyReadingList/master/public/assets/images/deleteabook.JPG"Book titles removed from right side after deletion") 
 
 
 
@@ -34,10 +35,7 @@ My Reading List aka The Reading Rover is a simple mysql and node based applicati
 
 
 ## Credits
+Created by Samarei Morgan.   Thanks to the University of Denver Coding Bootcamp Instructor Terra Taylor and  Teaching Assistants: Jacq, Evan, and Dillion.
 
 ## License
-
-
-Insert Photo with this code
-
-![alt text](https:// photo here.jpg "written detail") 
+MIT
