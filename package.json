@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Samareimorgan/MyReadingList#readme",
   "dependencies": {
+    "event-stream": "^3.3.4",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.12",
